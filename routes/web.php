@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\EventController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,27 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-$array = [1, 2, 3, 4, 5];
-Route::get('/', function () {
-    return view('welcome');
-});
+//retornando a view atraves do controller
+Route::get('/', [EventController::class, 'homePage']);
 
-Route::get('/contato', function () {
-    $array = [1, 2, 3, 4, 5];
-    return view('contato', [
-        'array' => $array,
-    ]);
-});
+Route::get('/events/create', [EventController::class, 'createEvent']);
 
-//passando parametro opcional com o ?
-Route::get('/contatos/{id?}', function ($id = null) {
-    return view('contatos', ['id' => $id]);
-});
-
-//passando parametro string 
-Route::get('/contato', function () {
-    //vendo se tem algum request com o nome search
-    $busca = request('search');
-
-    return view('contato', ['busca' => $busca]);
-});
