@@ -16,4 +16,5 @@ use \App\Http\Controllers\EventController;
 Route::get('/', [EventController::class, 'homePage']);
 
 Route::get('/events/create', [EventController::class, 'createEvent']);
+Route::get('/events/login', [EventController::class, 'loginPage']);
 
