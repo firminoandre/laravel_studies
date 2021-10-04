@@ -1,3 +1,34 @@
-* {
-    font-family: 'Anton';
+
+
+body{
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header{
+    background-color: #FFF;
+    border-bottom: 1px solid #CCC;
+}
+
+.row{
+    margin: 0;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.btn-primary{
+    background-color: #F2A340;
+    border: 2px solid #C28008;
+}
+
+.btn-primary:hover{
+    background-color: #C28008;
+    border-color: #C28008;
+}
+
+.navbar{
+    justify-content: space-between;
 }
